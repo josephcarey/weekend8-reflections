@@ -12,6 +12,8 @@ import V1Feeling from "../V1Feeling/V1Feeling";
 import V2Understanding from "../V2Understanding/V2Understanding";
 import V3Supported from "../V3Supported/V3Supported";
 import V4Comments from "../V4Comments/V4Comments";
+import V5ThankYou from "../V5ThankYou/V5ThankYou";
+import VAdmin from "../VAdmin/VAdmin";
 import DevNavFooter from "../DevNavFooter/DevNavFooter";
 
 class App extends Component {
@@ -25,7 +27,9 @@ class App extends Component {
           <Route path="/2" exact component={V2Understanding} />
           <Route path="/3" exact component={V3Supported} />
           <Route path="/4" exact component={V4Comments} />
-          <DevNavFooter links={["/", "/2", "/3", "/4"]} />
+          <Route path="/5" exact component={V5ThankYou} />
+          <Route path="/admin" exact component={VAdmin} />
+          <DevNavFooter links={["/", "/2", "/3", "/4", "/5", "/admin"]} />
         </div>
       </Router>
     );
