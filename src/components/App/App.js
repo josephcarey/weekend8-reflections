@@ -1,17 +1,33 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import './App.css';
+import React, { Component } from "react";
+
+// react-router-dom
+import { HashRouter as Router, Route } from "react-router-dom";
+
+// @material-ui
+import CssBaseline from "@material-ui/core/CssBaseline";
+
+// my imports
+import Header from "../Header/Header";
+import V1Feeling from "../V1Feeling/V1Feeling";
+import V2Understanding from "../V2Understanding/V2Understanding";
+import V3Supported from "../V3Supported/V3Supported";
+import V4Comments from "../V4Comments/V4Comments";
+import DevNavFooter from "../DevNavFooter/DevNavFooter";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Feedback!</h1>
-          <h4><i>Don't forget it!</i></h4>
-        </header>
-        <br/>
-      </div>
+      <Router>
+        <div>
+          <CssBaseline />
+          <Header />
+          <Route path="/" exact component={V1Feeling} />
+          <Route path="/2" exact component={V2Understanding} />
+          <Route path="/3" exact component={V3Supported} />
+          <Route path="/4" exact component={V4Comments} />
+          <DevNavFooter links={["/", "/2", "/3", "/4"]} />
+        </div>
+      </Router>
     );
   }
 }
