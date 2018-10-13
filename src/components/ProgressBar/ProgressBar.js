@@ -11,7 +11,7 @@ class ProgressBar extends Component {
 }
 
 const WithNumber = (ComponentIn, number) => {
-  return class extends Component {
+  return class ProgressBarWithNumber extends Component {
     render() {
       return (
         <div>
